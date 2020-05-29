@@ -4,3 +4,19 @@
 @mixin ed($property, $space, $div) {
   #{$property}: calc(100% - #{$space}) / $div;
 }
+
+/**
+* Media query
+* mobile first setting
+*/
+@mixin tablet {
+  @media screen and (min-width: 560px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
+}
