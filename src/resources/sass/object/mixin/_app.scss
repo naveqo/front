@@ -1,0 +1,6 @@
+/**
+* Equal division
+*/
+@mixin ed($property, $space, $div) {
+  #{$property}: calc(100% - #{$space}) / $div;
+}
