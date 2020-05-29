@@ -1,0 +1,29 @@
+/**
+ * font-size
+ */
+
+$fsms: (s: 1.2, xs: 1.0);
+@each $key, $value in $fsms {
+  .u-fs--#{$key} {
+    font-size: #{$value}rem;
+  }
+}
+
+$fsts: (s: 12, xs: 10);
+@media (min-width: 560px) {
+  @each $key, $value in $fsts {
+    .u-fs--#{$key} {
+      font-size: calc(#{$value}px + ((1vw - 5.6px) * 0.5)); /* responsive */
+    }
+  }
+}
+
+$fsds: (s: 1.4, xs: 1.2);
+@media (min-width: 960px) {
+  @each $key, $value in $fsds {
+    .u-fs--#{$key} {
+      font-size: #{$value}rem;
+    }
+  }
+}
+
