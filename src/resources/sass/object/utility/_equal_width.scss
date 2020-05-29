@@ -7,7 +7,7 @@ $spaces: "8px", "16px", "24px", "32px", "40px", "48px", "56px", "64px", "72px", 
 @each $div in $divs {
   @each $space in $spaces {
     .u-ew#{$div}_#{str-slice($space, 1, -3)} {
-      @include ed("width", #{$space}, 3);
+      @include ed("width", #{$space}, #{$div});
     }
   }
 }

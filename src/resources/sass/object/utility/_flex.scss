@@ -1,0 +1,107 @@
+/**
+ * Flex
+ * .u-fx { display: flex; }
+ * .u-ifx { display: inline-flex; }
+ * .u-fxd--(r|rr|c|cr) { flex-direction: (row|row-reverse|column|column-reverse); }
+ * .u-fxw--(nw|w|wr) { flex-wrap: (nowrap|wrap|wrap-reverse); }
+ * .u-fxj--(fs|fe|c|sb|sa) { justify-content: (flex-start|flex-end|center|space-between|space-around); }
+ * .u-fxai--(s|fs|fe|c|b) { align-items: (stretch|flex-start|flex-end|center|baseline); }
+ * .u-fxac--(s|fs|fe|c|b) { align-content: (stretch|flex-start|flex-end|center|baseline); }
+ * .u-fxo--(1..10) { order: (1..10); }
+ * .u-fxg--(1..10) { flex-grow: (1..10); }
+ * .u-fxs--(1..10) { flex-shrink: (1..10); }
+ * .u-fxb--(1..10) { flex-basis: (10%..100%); }
+ * .u-fxf(0..5)(0..5)(1..10) { flex: (0..5) (0..5) (10%..100%); }
+ * .u-fxas--(s|fs|fe|c|b) { align-self: (stretch|flex-start|flex-end|center|baseline); }
+ */
+
+.u-fx {
+  display: flex;
+}
+
+.u-ifx {
+  display: inline-flex;
+}
+
+$fxds: (r: row, rr: row-reverse, c: column, cr: column-reverse);
+@each $key, $value in $fxds {
+  .u-fxd--#{$key} {
+    flex-direction: $value;
+  }
+}
+
+$fxws: (nw: nowrap, w: wrap, wr: wrap-reverse);
+@each $key, $value in $fxws {
+  .u-fxw--#{$key} {
+    flex-wrap: unquote($value);
+  }
+}
+
+$fxjs: (fs: flex-start, fe: flex-end, c: center, sb: space-between, sa: space-around);
+@each $key, $value in $fxjs {
+  .u-fxj--#{$key} {
+    justify-content: unquote($value);
+  }
+}
+
+$fxais: (s: stretch, fs: flex-start, fe: flex-end, c: center, b: baseline);
+@each $key, $value in $fxais {
+  .u-fxai--#{$key} {
+    align-items: unquote($value);
+  }
+}
+
+$fxacs: (s: stretch, fs: flex-start, fe: flex-end, c: center, sb: space-between, sa: space-around);
+@each $key, $value in $fxais {
+  .u-fxac--#{$key} {
+    align-content: unquote($value);
+  }
+}
+
+$fxos: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+@each $value in $fxos {
+  .u-fxo--#{$value} {
+    order: $value;
+  }
+}
+
+$fxgs: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+@each $value in $fxgs {
+  .u-fxg--#{$value} {
+    flex-grow: $value;
+  }
+}
+
+$fxss: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+@each $value in $fxss {
+  .u-fxs--#{$value} {
+    flex-shrink: $value;
+  }
+}
+
+$fxbs: "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%";
+@each $value in $fxbs {
+  .u-fxb--#{str-slice($value, 1, -3)} {
+    flex-basis: #{unquote($value)};
+  }
+}
+
+$fxfg: 0, 1, 2, 3, 4, 5;
+$fxfs: 0, 1, 2, 3, 4, 5;
+$fxfb: "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%";
+@each $fxg in $fxfg {
+  @each $fxs in $fxfs {
+    @each $fxb in $fxfb {
+      .u-fxf#{$fxg}#{$fxs}#{str-slice($fxb, 1, -3)} {
+        flex: #{$fxg} #{$fxs} #{unquote($fxb)};
+      }
+    }
+  }
+}
+
+$fxacs: (a: auto, s: stretch, fs: flex-start, fe: flex-end, c: center, b: baseline);
+@each $key, $value in $fxais {
+  .u-fxas--#{$key} {
+    align-self: $value;
+  }
+}
