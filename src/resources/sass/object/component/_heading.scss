@@ -1,0 +1,54 @@
+/**
+ * Heading
+ *
+ * h1からh6まで対応
+ * モバイル/デスクトップのブレイクポイント間のフォントサイズは可変する
+ * 計算詳細は_base.scssのフォントサイズを参照
+ */
+
+$hms: (1: 2.6, 2: 2.2, 3: 2, 4: 1.8, 5: 1.6, 6: 1.4);
+@each $key, $value in $hms {
+  .c-h#{$key} {
+    font-size: #{$value}rem;
+    font-weight: bold;
+
+    &--l {
+      font-size: #{$value}rem;
+    }
+  }
+}
+
+$hts: (
+  1: (px: 26, diff: 14),
+  2: (px: 22, diff: 10),
+  3: (px: 20, diff: 8),
+  4: (px: 18, diff: 6),
+  5: (px: 16, diff: 4),
+  6: (px: 14, diff: 4)
+);
+@media (min-width: 560px) {
+  @each $key, $value in $hts {
+    .c-h#{$key} {
+      font-size: calc(#{map-get($value, px)}px + ((1vw - 5.6px) * (#{map-get($value, diff) / 4})));
+      font-weight: bold;
+
+      &--l {
+        font-size: calc(#{map-get($value, px)}px + ((1vw - 5.6px) * (#{map-get($value, diff) / 4})));
+      }
+    }
+  }
+}
+
+$hds: (1: 4, 2: 3.2, 3: 2.8, 4: 2.4, 5: 2, 6: 1.8);
+@media (min-width: 960px) {
+  @each $key, $value in $hds {
+    .c-h#{$key} {
+      font-size: #{$value}rem;
+      font-weight: bold;
+
+      &--l {
+        font-size: #{$value}rem;
+      }
+    }
+  }
+}

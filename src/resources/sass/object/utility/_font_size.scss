@@ -1,5 +1,10 @@
 /**
  * font-size
+ *
+ * モバイル： normal: 14px, small: 12px, x-small: 10px
+ * デスクトップ： normal: 16px, small: 14px, x-small: 12px
+ * モバイル/デスクトップのブレイクポイント間のフォントサイズは可変する
+ * 計算詳細は_base.scssのフォントサイズを参照
  */
 
 $fsms: (s: 1.2, xs: 1.0);
@@ -13,7 +18,7 @@ $fsts: (s: 12, xs: 10);
 @media (min-width: 560px) {
   @each $key, $value in $fsts {
     .u-fs--#{$key} {
-      font-size: calc(#{$value}px + ((1vw - 5.6px) * 0.5)); /* responsive */
+      font-size: calc(#{$value}px + ((1vw - 5.6px) * 0.5));
     }
   }
 }
