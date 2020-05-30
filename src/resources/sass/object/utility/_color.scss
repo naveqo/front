@@ -1,0 +1,31 @@
+/**
+ * color utility
+ *
+ * .u-c--be { color: blue; }
+ * .u-bgc--be { background-color: blue; }
+ * .u-bdc--be { border-color: blue; }
+ */
+
+$colors: (
+  be: $BLUE,
+  t: $TURQUOISE,
+  r: $RED,
+  bk: $BLACK,
+  g: $GRAY,
+  gd: $GRAY_DARK,
+  gl: $GRAY_LIGHT,
+);
+
+@each $key, $value in $colors {
+  .u-c--#{$key} {
+    color: #{$value} !important;
+  }
+
+  .u-bgc--#{$key} {
+    background-color: #{$value} !important;
+  }
+
+  .u-bdc--#{$key} {
+    border-color: #{$value} !important;
+  }
+}
