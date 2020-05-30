@@ -15,7 +15,7 @@ $fsms: (s: 1.2, xs: 1.0);
 }
 
 $fsts: (s: 12, xs: 10);
-@media (min-width: 560px) {
+@media (min-width: #{map-get($BREAKPOINTS, 'tablet')}) {
   @each $key, $value in $fsts {
     .u-fs--#{$key} {
       font-size: calc(#{$value}px + ((1vw - 5.6px) * 0.5));
@@ -24,7 +24,7 @@ $fsts: (s: 12, xs: 10);
 }
 
 $fsds: (s: 1.4, xs: 1.2);
-@media (min-width: 960px) {
+@media (min-width: #{map-get($BREAKPOINTS, 'desktop')}) {
   @each $key, $value in $fsds {
     .u-fs--#{$key} {
       font-size: #{$value}rem;

@@ -6,14 +6,14 @@ body {
   font-size: 1.4rem; /* 14px */
   line-height: 1.5;
 
-  @media (min-width: 560px) {
+  @media (min-width: #{map-get($BREAKPOINTS, 'tablet')}) {
     // calc(最小フォントサイズ + ((1vw - 最大幅の1%) * 0.5));
     // 0.5 = 最小と最大フォントサイズの差 / (最大幅の1% - 最小幅の1%)
     // 0.5 = 2 / (9.6 - 5.6)
     font-size: calc(14px + ((1vw - 5.6px) * 0.5));
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: #{map-get($BREAKPOINTS, 'desktop')}) {
     font-size: 1.6rem; /* 16px */
   }
 }
