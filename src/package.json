@@ -18,5 +18,12 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
+    },
+    "browserslist": [
+        "last 3 versions",
+        "ie 11"
+    ],
+    "dependencies": {
+        "material-design-icons": "^3.0.1"
     }
 }

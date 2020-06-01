@@ -20,3 +20,27 @@
     @content;
   }
 }
+
+/**
+* Grid Layout
+*/
+@mixin setGrid(
+  $rows,
+  $columns,
+  $row_gap,
+  $column_gap,
+  $h: null,
+  $w: null,
+  $jc: center,
+  $ac: null
+) {
+  width: $h;
+  height: $h;
+  display: grid;
+  grid-auto-rows: $rows;
+  grid-template-columns: $columns;
+  grid-row-gap: $row_gap;
+  grid-column-gap: $column_gap;
+  justify-content: $jc;
+  align-content: $ac;
+}

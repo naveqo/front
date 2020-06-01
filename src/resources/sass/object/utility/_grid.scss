@@ -1,0 +1,15 @@
+.u-grid {
+  display: grid;
+}
+
+$gds: 1,2,3,4,5;
+@each $gd in $gds {
+  .u-gl#{$gd} {
+    @include setGrid(
+            $rows: 100px,
+            $columns: repeat(#{$gd}, 1fr),
+            $row_gap: 10px,
+            $column_gap: 10px
+    );
+  }
+}

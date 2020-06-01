@@ -9,6 +9,7 @@
 
     </head>
     <body>
+    <i class="material-icons">cloud_upload</i>
     <h1 class="c-h1">Heading1 見出し</h1>
     <h2 class="c-h2">Heading2 見出し</h2>
     <h3 class="c-h3">Heading3 見出し</h3>
