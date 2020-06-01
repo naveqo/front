@@ -1,0 +1,23 @@
+/**
+ * Margin Utility
+ *
+ * マージンは8の倍数のみ
+ */
+
+$spaces: "8px", "16px", "24px", "32px", "40px", "48px", "56px", "64px", "72px", "80px";
+
+@each $s in $spaces {
+  .u-mg#{str-slice($s, 1, -3)} {
+    margin: unquote($s);
+  }
+}
+
+$pos: (t: top, r: right, b: bottom, l: left);
+
+@each $pk, $p in $pos {
+  @each $s in $spaces {
+    .u-mg#{$pk}#{str-slice($s, 1, -3)} {
+      margin-#{$p}: unquote($s);
+    }
+  }
+}
